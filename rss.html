@@ -1,0 +1,93 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Face Bookmarks</title>
+	<!-- <link rel="stylesheet" type="text/css" media="all" href="bootstrap/css/bootstrap.css"> -->
+	<style type="text/css">
+		#head{height:30px;background:#fff;width:100%;}
+		.gray{color:gray;}
+		.body{background:#f2f2f2;padding:15px 20px;}
+		.group{padding: 8px 0;display: table;text-align: center;width: 100%;}
+		.group label{width: 85%;}
+		.group label span{width:5%;text-align: right;display: inline-block;padding-right: 8px;line-height: 20px;}
+		.hot-group{padding: 0;}
+		.sub-group{width: 85%;text-align: right;margin: 0 auto;}
+		.sub-group .hot{font-size: 12px;color: #333;}
+		.txt{border:1px solid #ababab;width:80%;padding: 3px;line-height: 20px;}
+		.tag{position: relative;display: inline;}
+
+		.autosuggest{position: relative;}
+		.autosuggest ul{
+			position: absolute;
+			left: 0;
+			top: 27px;
+			background: white;
+			margin: 0;
+			border: 1px solid #CCC;
+			list-style: none;
+			width: 30%;
+			padding: 5px;
+			border-top: none;
+		}
+		.autosuggest ul li a{display: block;padding: 2px 3px;text-decoration: none;color: #333;}
+		.autosuggest ul li:nth-child(1n){background:#f3f6fa;}
+		.autosuggest ul li:nth-child(2n){background:#fff;}
+		.autosuggest ul li.on, .autosuggest ul li a:hover{background: #3c7cd4;color: #fff;text-decoration: none;color:#fff;}
+		.autosuggest ul li.on a{color: #fff;}
+		.hide{display: none;}
+
+	</style>
+	<script type="text/javascript" src="rss.js"></script>
+</head>
+<body>
+	<div id="head">
+		<a href="http://f2e.dp/face">Face</a>
+		<span class="gray"> Save a bookmark</span>
+		<span>Signed in as <i id="user"></i></span>
+	</div>
+
+	<div class="body">
+		<div class="group autosuggest">
+			<label for="tag">
+				<span>tag:</span>
+				<div class="tag">
+					<input type="text" class="txt" id="tag" />
+					<ul id="suggest" class="hide"></ul>	
+				</div>
+			</label>
+		</div>
+		<div class="group hot-group"><div class="sub-group"><input type="checkbox" id="hot" /><label for="hot" class="hot">标记为热门资讯</label></div></div>
+		<div class="group">
+			<label for="url">
+				<span>url:</span>
+				<input type="text" class="txt" id="url" />
+			</label>
+		</div>
+
+		<div class="group">
+			<label for="title">
+				<span>title:</span>
+				<input type="text" class="txt" id="title" />
+			</label>
+		</div>
+
+		<div class="group">
+			<label for="note">
+				<span>note:</span>
+				<textarea class="txt" id="note"></textarea>
+			</label>
+		</div>
+
+
+		<div class="group">
+			<div class="sub-group">
+				<input type="submit" class="btn" value="save" id="save" />
+				<input type="button" class="btn" value="cancel" id="cancel" />
+			</div>
+		</div>
+
+	</div>
+
+	
+</body>
+</html>

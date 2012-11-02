@@ -1,0 +1,32 @@
+{
+  "name" : "F2e",
+  "version" : "1.0.1",
+  "description" : "收集前端好的资讯到face",
+  "background" : {
+    "scripts": ["background.js"]
+  },
+  "omnibox" : {"keyword" : "tag"},
+   "permissions": [
+    "tabs",
+    "storage",
+    "http://127.0.0.1/*",
+    "http://f2e.dp/*"
+  ],
+ "browser_action": {
+    "default_icon": "img/16_16.png",
+    "default_title": "f2e!",
+    "default_popup": "popup.html"
+  },
+  "options_page":"option.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/jquery-1.8.1.min.js", "js/content.js"],
+      "css":["f2e.css"]
+    }
+  ],
+  "web_accessible_resources":[
+    "img/tag.png"
+  ],
+  "manifest_version": 2
+}
