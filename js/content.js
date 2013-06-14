@@ -76,7 +76,7 @@ port.onMessage.addListener(function(msg){
 
 
 var HTML = '<div id="f2e-wrap">'+
-		'<div class="f2e-head">Face Bookmarks</div>'+
+		'<div class="f2e-head">Hoof Bookmarks</div>'+
 		'<div class="f2e-dtxt">'+
 			'<input type="text" value="" id="f2e-keyword" class="f2e-txt" placeholder="多标签搜索，请用空格分隔" />'+
 		'</div>'+
@@ -94,7 +94,7 @@ var HTML = '<div id="f2e-wrap">'+
 			'</div>'+
 		'</div>'+
 		'<div class="f2e-footer">'+
-			'Chunchengli on Face'+
+			'Chunchengli on Hoof'+
 		'</div>'+
 	'</div>';
 

@@ -8,7 +8,7 @@ var User = {},
 
 User.login = function(callback){
 	if(!User.islogin){
-		ajaxGET('http://f2e.dp/face/api/user',{}, function(u){
+		ajaxGET('http://blog.dian.lu/api/user',{}, function(u){
 			if(u.code == 200){
 
 				User.islogin = true;
@@ -59,7 +59,7 @@ chrome.extension.onRequest.addListener(
 							window.open('rss.html', '_blank', 'width=700,height=330,left=' + left + ',top=' + top);
 						});
 					}else{
-						window.open('http://f2e.dp/face/user/login');
+						window.open('http://blog.dian.lu/user/login');
 					}
 				}
 			);
@@ -81,7 +81,7 @@ chrome.extension.onConnect.addListener(function(port) {
 					left = msg.width / 2 - 350;
 					window.open('idea.html', '_blank', 'width=700,height=300,left=' + left + ',top=' + top);
 				}else{
-					window.open('http://f2e.dp/face/user/login');
+					window.open('http://blog.dian.lu/user/login');
 				}
 			});
 
@@ -100,7 +100,7 @@ chrome.extension.onConnect.addListener(function(port) {
 							window.open('rss.html', '_blank', 'width=700,height=350,left=' + left + ',top=' + top);
 						});
 					}else{
-						window.open('http://f2e.dp/face/user/login');
+						window.open('http://blog.dian.lu/user/login');
 					}
 				}
 			);
@@ -111,7 +111,7 @@ chrome.extension.onConnect.addListener(function(port) {
 
 
 News.save = function(info){
-	ajaxGET('http://f2e.dp/face/api/tag', {
+	ajaxGET('http://blog.dian.lu/api/tag', {
 		'url': info.url,
 		'title': info.title,
 		'note': info.note,
@@ -124,7 +124,7 @@ News.save = function(info){
 };
 
 News.ideaSave = function(info){
-	ajaxGET('http://f2e.dp/face/api/idea', {
+	ajaxGET('http://blog.dian.lu/api/idea', {
 		'title': info.title,
 		'note': info.note
 	}, function(data){
@@ -132,7 +132,7 @@ News.ideaSave = function(info){
 };
 
 News.get = function(url, callback){
-	ajaxGET('http://f2e.dp/face/api/getTagByURL', { "url" : url}, function(data){
+	ajaxGET('http://blog.dian.lu/api/getTagByURL', { "url" : url}, function(data){
 		if(data.code == 200){
 			callback && callback(data.msg);
 		}else{
@@ -284,7 +284,7 @@ News.getUserTagFromStorage = function(callback){
 
 News.getTagByUID = function(callback){
 
-	ajaxGET('http://f2e.dp/face/api/getTagByUID', {}, function(data){
+	ajaxGET('http://blog.dian.lu/api/getTagByUID', {}, function(data){
 		if(data.code == 200){
 			storage.set({user_tag: data.msg});
 			callback && callback(data.msg);
@@ -297,7 +297,7 @@ News.getTagByUID = function(callback){
 
 News.getPageByUID = function(tag, callback){
 
-	ajaxGET('http://f2e.dp/face/api/getPageByUID', {}, function(data){
+	ajaxGET('http://blog.dian.lu/api/getPageByUID', {}, function(data){
 		if(data.code == 200){
 			storage.set({page : data.msg});
 			News.parseSearch(tag, data.msg, callback);

@@ -1,7 +1,7 @@
 {
-  "name" : "F2e",
+  "name" : "HooF",
   "version" : "1.0.1",
-  "description" : "收集前端好的资讯到face",
+  "description" : "Chrome 书签栏",
   "background" : {
     "scripts": ["background.js"]
   },
@@ -10,11 +10,11 @@
     "tabs",
     "storage",
     "http://127.0.0.1/*",
-    "http://f2e.dp/*"
+    "http://blog.dian.lu/*"
   ],
  "browser_action": {
     "default_icon": "img/16_16.png",
-    "default_title": "f2e!",
+    "default_title": "hoof!",
     "default_popup": "popup.html"
   },
   "options_page":"option.html",
@@ -28,5 +28,6 @@
   "web_accessible_resources":[
     "img/tag.png"
   ],
+  "update_url": "http://clients2.google.com/service/update2/crx",
   "manifest_version": 2
 }
